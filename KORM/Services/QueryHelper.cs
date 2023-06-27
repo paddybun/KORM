@@ -1,6 +1,6 @@
 ﻿using KORM.Interfaces;
 
-namespace KORM.Service;
+namespace KORM.Services;
 
 public class QueryHelper
 {

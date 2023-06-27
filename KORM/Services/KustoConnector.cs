@@ -3,8 +3,9 @@ using KORM.Interfaces;
 using Kusto.Data;
 using Kusto.Data.Common;
 using Kusto.Data.Net.Client;
+using Kusto.Ingest;
 
-namespace KORM.Service;
+namespace KORM.Services;
 
 public class KustoConnector: IKustoConnector, IDisposable
 {
@@ -13,6 +14,7 @@ public class KustoConnector: IKustoConnector, IDisposable
 
     private ICslQueryProvider _queryProvider;
     private ICslAdminProvider _adminProvider;
+    private IKustoQueuedIngestClient _queuedIngestClient;
 
     public KustoConnector(IKustoConnectionOptions connectionOptions)
     {
@@ -40,11 +42,22 @@ public class KustoConnector: IKustoConnector, IDisposable
         return _adminProvider;
     }
 
+    public IKustoQueuedIngestClient GetQueuedIngestClient()
+    {
+        if (_disposed) throw new ObjectDisposedException(nameof(ICslAdminProvider));
+        if (_queuedIngestClient != null) return _queuedIngestClient;
+        var kcsb =
+            new KustoConnectionStringBuilder(_connectionOptions.ClusterUri, _connectionOptions.DefaultDatabase)
+                .WithAadAzureTokenCredentialsAuthentication(new DefaultAzureCredential());
+        _queuedIngestClient = KustoIngestFactory.CreateQueuedIngestClient(kcsb);
+        return _queuedIngestClient;
+    }
 
     public void Dispose()
     {
         _queryProvider.Dispose();
         _adminProvider.Dispose();
+        _queuedIngestClient.Dispose();
         _disposed = true;
     }
 }

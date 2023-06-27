@@ -30,7 +30,11 @@ public abstract class BaseEntity : IKustoEntity
     public void SetValue(string name, object value)
     {
         var pi = PropertyMapping[name];
-        var converted = Convert.ChangeType(value, pi.PropertyType);
+        var t = Nullable.GetUnderlyingType(pi.PropertyType) ?? pi.PropertyType;
+        
+        var isColumnEmpty = value is DBNull || (value as string) is "";
+
+        var converted = (value == null || isColumnEmpty) ? null : Convert.ChangeType(value, t);
         pi.SetValue(this, converted);
     }
 }
