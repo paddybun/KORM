@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KORM", "KORM\KORM.csproj", "{DC8D8843-7315-4555-843E-755263DD0DEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KORM.Cli", "KORM.Cli\KORM.Cli.csproj", "{DC9F20E2-284F-4598-9B1A-CFD6A3B62369}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KORM.Tests", "KORM.Tests\KORM.Tests.csproj", "{8AA7C5DC-343D-4BEF-ADA1-E27958BA230C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC8D8843-7315-4555-843E-755263DD0DEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC8D8843-7315-4555-843E-755263DD0DEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC8D8843-7315-4555-843E-755263DD0DEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC8D8843-7315-4555-843E-755263DD0DEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC9F20E2-284F-4598-9B1A-CFD6A3B62369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC9F20E2-284F-4598-9B1A-CFD6A3B62369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC9F20E2-284F-4598-9B1A-CFD6A3B62369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC9F20E2-284F-4598-9B1A-CFD6A3B62369}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AA7C5DC-343D-4BEF-ADA1-E27958BA230C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AA7C5DC-343D-4BEF-ADA1-E27958BA230C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AA7C5DC-343D-4BEF-ADA1-E27958BA230C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AA7C5DC-343D-4BEF-ADA1-E27958BA230C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
