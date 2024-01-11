@@ -1,4 +1,5 @@
-﻿using KORM.Interfaces;
+﻿using KORM.Extensions.EntityExtensions;
+using KORM.Interfaces;
 
 namespace KORM.Services;
 
@@ -9,5 +10,10 @@ public class QueryHelper
     public QueryHelper(IKustoConnector connector)
     {
         _connector = connector;
+
+        var date = DateTime.Now;
+        var res = date.Between()
+            .From(date.AddDays(-1))
+            .To(date);
     }
 }

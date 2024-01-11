@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <Folder Include="Attributes\" />
+    <Folder Include="Extensions\EntityExtensions\" />
     <Folder Include="Implementations\" />
   </ItemGroup>
 
